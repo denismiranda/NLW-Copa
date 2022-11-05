@@ -10,11 +10,11 @@ ul {
 
 body { /*Background*/
   
- background-color: #121214;
- background-image: var(--bg) ;                                  
- background-repeat: no-repeat;
- background-position: top center;
- background-size: cover;
+  background-color: #121214;
+  background-image: var(--bg) ;                                  
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
 }
 
 :root {
@@ -65,7 +65,7 @@ body * {
 }
 
 header {
-  margin-bottom: 63px;
+  margin-bottom: 30px;
   text-align: center;
 }
 
@@ -133,8 +133,30 @@ header {
   color: #e1e1e6;
 }
 
-/* Animation || Transition */
+/* button */
+.but {
+  background: var(--card-bg-color);
+  border: 1px solid var(--card-title-border-color);
+  border-radius: 6px;
+  color: #F7DD43;
+  cursor: pointer;
+  font-weight: bold;
+  height: 50px;
+  letter-spacing: .16px;
+  margin-right: 0;
+  position: relative;
+  width: 70px;
+  }
+  
+.button {
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
 
+
+/* Animation || Transition */
+.button:hover,
 .card h2:hover,
 .card ul li strong:hover,
 .card ul li img:hover,
@@ -142,6 +164,7 @@ header:hover {
   transform: scale(1.1);
 }
 
+.button,
 .card h2,
 .card ul li strong,
 .card ul li img,
