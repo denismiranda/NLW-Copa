@@ -10,11 +10,46 @@ ul {
 
 body { /*Background*/
   
-  background-color: #121214;
-  background-image: url(./assets/bg.png);
-  background-repeat: no-repeat;
-  background-position: top center;
-  background-size: 100% auto;
+ background-color: #121214;
+ background-image: var(--bg) ;                                  
+ background-repeat: no-repeat;
+ background-position: top center;
+ background-size: cover;
+}
+
+:root {
+
+  --card-title-border-color: #746615;
+
+  --card-color-primary : #746615;
+
+  --card-bg-color: #1d1c19;
+
+  --bg: url(./assets/bg-yellow.svg);
+
+}
+
+body.blue {
+  
+  --card-title-border-color: #338af3;
+
+  --card-color-primary : #338af3;
+
+  --card-bg-color: #202024;
+
+  --bg: url(./assets/bg-blue.svg) ;
+  
+}
+
+body.green {
+
+  --card-title-border-color: #047c3f;
+
+  --card-color-primary : #047c3f;
+
+  --card-bg-color: #1a1f1b ;
+
+  --bg: url(./assets/bg-green.svg) ;
 
 }
 
@@ -24,8 +59,9 @@ body * {
 }
 
 #app {
-  margin: 52px auto ;
+  margin: auto ;
   width: fit-content; 
+  padding-top: 52px ;
 }
 
 header {
@@ -33,22 +69,25 @@ header {
   text-align: center;
 }
 
-main {
+#cards {
   display: flex;
+  flex-direction: column;
   gap: 32px;
 }
-
+ 
 .card {
+  
   padding: 32px 23px ;
   text-align: center;
-  background: #1d1c19;
+  background: var(--card-bg-color);
   border-radius: 6px;
-  border-bottom: 3px solid #746615;
-  border-top: 2px solid #746615;
+  border-bottom: 3px solid var(--card-color-primary) ;
+  border-top: 2px solid var(--card-color-primary);
+  margin-bottom: 24px;
 }
 
 .card h2 {
-  border: 1px solid #746615;
+  border: 1px solid var(--card-title-border-color);
   padding: 8px 16px;
   border-radius: 6px;
 
@@ -94,3 +133,45 @@ main {
   color: #e1e1e6;
 }
 
+/* Animation || Transition */
+
+.card h2:hover,
+.card ul li strong:hover,
+.card ul li img:hover,
+header:hover {
+  transform: scale(1.1);
+}
+
+.card h2,
+.card ul li strong,
+.card ul li img,
+header {
+  transition: transform 0.3s;
+}
+
+.card {
+  animation: appear .2s forwards;
+}
+
+
+
+@keyframes appear {
+  0%{
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+
+  100%{
+    transform: translateY(0px);
+    opacity: 1;
+  }
+
+}
+
+@media (min-width: 700px) {
+  #cards {
+    max-width: 670px;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
