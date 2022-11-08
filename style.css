@@ -10,8 +10,6 @@ ul {
 
 li { 
   list-style: none;
-  
- 
 }
 
 body { /*Background*/
@@ -60,8 +58,7 @@ body.green {
 }
 
 body * {
-  font-family: 'Roboto', sans-serif;
-  
+  font-family: 'Roboto', sans-serif; 
 }
 
 #app {
@@ -76,12 +73,12 @@ header {
 }
 
 #cards {
-  display: flex;text-align: center;
+  display: flex;
+  text-align: center;
   gap: 32px;
 }
  
 .card {
-  
   padding: 32px 23px ;
   text-align: center;
   background: var(--card-bg-color);
@@ -91,19 +88,23 @@ header {
   margin-bottom: 24px;
 }
 
-.card h2 {
-  border: 1px solid var(--card-title-border-color);
-  padding: 8px 16px;
-  border-radius: 6px;
+footer {
+  text-align: center;
+  margin-bottom: 24px;
+  color: var(--card-color-primary);
+}
 
+.card h2, .footer {
+  border: 1px solid var(--card-title-border-color);
+  padding: 8px 15px;
+  border-radius: 6px;
   display: flex;
-  gap: 16px;
+  gap: 15px;
   justify-content: center;
   width: fit-content;
   margin-inline: auto;
   margin-bottom: 53px;
   align-items: center;
-  
   color: #F7DD43;
 }
 
@@ -138,19 +139,6 @@ header {
   color: #e1e1e6;
 }
 
-footer  {
-  color: #e1e1e6;
- text-align: center;
- margin-bottom: 10px;
-}
-
-.footer{
-justify-content: center;
- text-align: center;
- display: flex;
-gap: 10px;
-margin-bottom: 15px;
-} 
 
 /* button */
 .but {
@@ -165,7 +153,7 @@ margin-bottom: 15px;
   margin-right: 0;
   position: relative;
   width: 70px;
-  }
+}
   
 .button {
   text-align: center;
@@ -173,6 +161,13 @@ margin-bottom: 15px;
   margin-top: 20px;
 }
 
+@media (min-width: 400px) {
+  #cards {
+    max-width: 670px;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
 
 /* Animation || Transition */
 .button:hover,
@@ -196,7 +191,6 @@ header {
 }
 
 
-
 @keyframes appear {
   0%{
     transform: translateY(-50px);
@@ -208,12 +202,4 @@ header {
     opacity: 1;
   }
 
-}
-
-@media (min-width: 700px) {
-  #cards {
-    max-width: 670px;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
 }
